@@ -1,0 +1,22 @@
+{
+  "name": "my-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "set \"NODE_ENV=development\" && node --watch --import remix/node-tsx server.ts",
+    "hmr": "set \"NODE_ENV=development\" && node hmr.ts",
+    "start": "set \"NODE_ENV=production\" && node --import remix/node-tsx server.ts",
+    "test": "set \"NODE_ENV=test\" && remix test",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=24.3.0"
+  },
+  "dependencies": {
+    "remix": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "typescript": "latest"
+  }
+}
