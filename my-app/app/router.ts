@@ -3,6 +3,7 @@ import { render } from 'remix/middleware/render'
 import { staticFiles } from 'remix/middleware/static'
 
 import controller from './actions/controller.tsx'
+import todosController from './actions/todos/controller.ts'
 import { assets } from './assets.ts'
 import { routes } from './routes.ts'
 
@@ -19,3 +20,4 @@ declare module 'remix' {
 }
 
 router.map(routes, controller)
+router.map(routes.todos, todosController)
