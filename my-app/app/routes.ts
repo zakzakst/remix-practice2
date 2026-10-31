@@ -12,4 +12,8 @@ export const routes = route({
     update: patch("/:id"),
     destroy: del("/:id"),
   }),
+  todos2: route("/api/todos2", {
+    index: get("/"),
+    show: get("/:id"),
+  }),
 });
