@@ -14,5 +14,6 @@ export const routes = route({
   }),
   todos2: route("/api/todos2", {
     index: get("/"),
+    show: get("/:id"),
   }),
 });

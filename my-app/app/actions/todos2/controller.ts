@@ -25,5 +25,11 @@ export const todos2Controller = createController(routes.todos2, {
     index() {
       return Response.json(todos);
     },
+    show(context) {
+      const todo = todos.find((todo) => todo.id === Number(context.params.id));
+      return todo
+        ? Response.json(todo)
+        : Response.json({ error: "Todo not found" }, { status: 404 });
+    },
   },
 });
