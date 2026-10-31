@@ -19,5 +19,8 @@ export default createController(routes, {
     test(context) {
       return context.render(<TestPage />);
     },
+    plane() {
+      return new Response("Plane Page");
+    },
   },
 });

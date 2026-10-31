@@ -4,4 +4,5 @@ export const routes = route({
   assets: get("/assets/*path"),
   home: "/",
   test: "/test",
+  plane: "/plane",
 });
