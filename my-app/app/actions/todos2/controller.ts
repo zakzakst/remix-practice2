@@ -31,5 +31,9 @@ export const todos2Controller = createController(routes.todos2, {
         ? Response.json(todo)
         : Response.json({ error: "Todo not found" }, { status: 404 });
     },
+    async create(context) {
+      const request = await context.request;
+      return Response.json({});
+    },
   },
 });
