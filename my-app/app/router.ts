@@ -9,6 +9,7 @@ import { assets } from "./assets.ts";
 import { routes } from "./routes.ts";
 
 export const router = createRouter({
+  // middleware は複数のリクエストに共通する処理を担います。たとえば、静的ファイルの配信、ページ描画の仕組み、リクエストのログ記録などです。
   middleware: [staticFiles("./public", { index: false }), render({ assets })],
 });
 

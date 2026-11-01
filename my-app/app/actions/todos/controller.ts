@@ -32,7 +32,10 @@ function parseCreateInput(value: unknown): Omit<Todo, "id"> | undefined {
   }
 
   const title = value.title.trim();
-  if (!title || (value.completed !== undefined && typeof value.completed !== "boolean")) {
+  if (
+    !title ||
+    (value.completed !== undefined && typeof value.completed !== "boolean")
+  ) {
     return undefined;
   }
 
@@ -89,6 +92,8 @@ export default createController(routes.todos, {
       return Response.json(todo, {
         status: 201,
         headers: {
+          // 「作成されたリソースはここにあります」と示すヘッダーです。
+          // ルート定義から URL を組み立てるので、パスを直接文字列で書くよりルートとの整合性を保ちやすくなります。
           Location: routes.todos.show.href({ id: todo.id }),
         },
       });
