@@ -17,4 +17,7 @@ export const routes = route({
     show: get("/:id"),
     create: post("/"),
   }),
+  pages: route("/pages", {
+    login: "/login",
+  }),
 });

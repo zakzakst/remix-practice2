@@ -5,6 +5,7 @@ import { staticFiles } from "remix/middleware/static";
 import controller from "./actions/controller.tsx";
 import todosController from "./actions/todos/controller.ts";
 import { todos2Controller } from "./actions/todos2/controller.ts";
+import { pagesController } from "./actions/pages/controller.tsx";
 import { assets } from "./assets.ts";
 import { routes } from "./routes.ts";
 
@@ -24,3 +25,4 @@ declare module "remix" {
 router.map(routes, controller);
 router.map(routes.todos, todosController);
 router.map(routes.todos2, todos2Controller);
+router.map(routes.pages, pagesController);
