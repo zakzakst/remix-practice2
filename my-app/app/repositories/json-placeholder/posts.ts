@@ -63,6 +63,12 @@ export class JPPostsRepository {
     let failureCategory = "request_error";
     let upstreamStatus: number | undefined;
     try {
+      // TODO: requestに設定してみる
+      // - Content-Type
+      // - custom-retry-times
+      // - ベーシック認証
+      // - maxContentLength
+      // TODO: axiosでinterceptors使ってみる
       const response = await fetch(this.baseUrl, { signal: timeoutSignal });
       if (!response.ok) {
         failureCategory = "http_error";
