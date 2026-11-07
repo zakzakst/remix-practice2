@@ -1,0 +1,50 @@
+openapi: 3.0.3
+info:
+  title: User Management API
+  version: 1.0.0
+  description: ユーザー管理API
+servers:
+  - url: https://api.example.com
+paths:
+  /users:
+    get:
+      summary: ユーザーを取得するAPIです。
+      responses:
+        '200':
+          description: HTTPステータスコード200と以下の情報を含むJSONオブジェクトを返します。
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+        '400':
+          description: HTTPステータスコード400と以下の情報を含むJSONオブジェクトを返します。
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: invalid_request
+                  error_description:
+                    type: string
+                    example: アクセストークンが指定されていません
+components:
+  schemas:
+    user:
+      type: object
+      required:
+        - id
+        - name
+        - email
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: Taro
+        email:
+          type: string
+          format: email
+          example: taro@example.com

@@ -6,11 +6,12 @@ get:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              user_id:
-                type: string
-                example: 1234567
+            $ref: "../schemas/user.yaml"
+            # type: object
+            # properties:
+            #   user_id:
+            #     type: string
+            #     example: 1234567
     "400":
       description: HTTPステータスコード400と以下の情報を含むJSONオブジェクトを返します。
       content:
