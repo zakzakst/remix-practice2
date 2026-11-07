@@ -1,0 +1,19 @@
+{
+  "name": "swagger",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "swagger:typescript": "openapi-typescript bundle.yaml -o schema.d.ts",
+    "swagger:typescript2": "sw2dts bundle.yaml > schema2.d.ts"
+  },
+  "devDependencies": {
+    "openapi-typescript": "^7.13.0",
+    "sw2dts": "^2.6.3",
+    "typescript": "^5.9.3"
+  }
+}

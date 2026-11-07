@@ -17,3 +17,6 @@
 - dtsgenerator
   - https://www.npmjs.com/package/dtsgenerator
   - https://labs.snaq.me/entry/2023/06/28/175655
+- https://github.com/mstssk/sw2dts 上手くできなかった。
+
+⇒ typescript 7に対応しているのが基本的にない。typescriptのバージョンをtypescript@^5.9.3にしてopenapi-typescriptを利用すること検討
