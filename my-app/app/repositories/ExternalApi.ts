@@ -1,3 +1,5 @@
+import { ExternalErrorCodes } from "../exceptions/ExternalError.ts";
+
 interface ExternalApiProps {
   basePath: string;
 }
@@ -16,12 +18,12 @@ export class ExternalApi {
     try {
       const response = await fetch(this.basePath, { signal: timeoutSignal });
       if (!response.ok) {
-        // TODO: エラー投げる
+        throw ExternalErrorCodes.EX502001(undefined, response);
       }
       const data = await response.json();
       return data;
     } catch {
-      // TODO: エラー投げる
+      throw ExternalErrorCodes.EX500001();
     }
   }
 }
