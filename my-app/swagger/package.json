@@ -9,9 +9,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "swagger:typescript": "openapi-typescript bundle.yaml -o schema.d.ts",
-    "swagger:typescript2": "sw2dts bundle.yaml > schema2.d.ts"
+    "swagger:typescript2": "sw2dts bundle.yaml > schema2.d.ts",
+    "swagger:typescript3": "dtsgen -o schema3.d.ts bundle.yaml",
+    "swagger:typescript4": "dtsgen -o schema4.d.ts -c dtsgen.json"
   },
   "devDependencies": {
+    "@dtsgenerator/replace-namespace": "^1.7.0",
+    "dtsgenerator": "^3.19.2",
     "openapi-typescript": "^7.13.0",
     "sw2dts": "^2.6.3",
     "typescript": "^5.9.3"

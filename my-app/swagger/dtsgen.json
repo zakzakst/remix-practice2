@@ -1,0 +1,19 @@
+{
+  "input": {
+    "files": ["bundle.yaml"]
+  },
+  "plugins": {
+    "@dtsgenerator/replace-namespace": {
+      "map": [
+        {
+          "from": ["Components"],
+          "to": ["APIComponents"]
+        },
+        {
+          "from": ["Paths"],
+          "to": ["APIPaths"]
+        }
+      ]
+    }
+  }
+}
