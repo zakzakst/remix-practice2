@@ -7,7 +7,10 @@
     "hmr": "set \"NODE_ENV=development\" && node hmr.ts",
     "start": "set \"NODE_ENV=production\" && node --import remix/node-tsx server.ts",
     "test": "set \"NODE_ENV=test\" && remix test",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "swagger:generate": "multi-file-swagger -o yaml swagger/index.yaml > swagger/openapi.yaml",
+    "swagger:generate2": "redocly build-docs swagger/bundle.yaml --output=swagger/index.html",
+    "swagger:bundle": "redocly bundle swagger/index.yaml --output swagger/bundle.yaml"
   },
   "engines": {
     "node": ">=24.3.0"
@@ -16,7 +19,9 @@
     "remix": "^3.1.0"
   },
   "devDependencies": {
+    "@redocly/cli": "^2.73.0",
     "@types/node": "latest",
+    "multi-file-swagger": "^2.3.0",
     "typescript": "latest"
   }
 }
