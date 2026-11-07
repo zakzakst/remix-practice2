@@ -15,6 +15,7 @@ export class PostsUseCases {
     const response = {
       page,
       limit,
+      total: 0,
       items: [],
     };
 

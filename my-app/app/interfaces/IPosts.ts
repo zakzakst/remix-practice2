@@ -8,5 +8,6 @@ export type GetAllPostsRequestParams = {
 export type GetAllPostsResponse = {
   page: number;
   limit: number;
+  total: number;
   items: Post[];
 };
