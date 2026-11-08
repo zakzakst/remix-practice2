@@ -83,7 +83,7 @@ export default createController(routes.todos, {
       const input = parseCreateInput(await readJson(context.request));
       if (!input) {
         return Response.json(
-          { error: "A non-empty title is required" },
+          { error: "必須項目が不足しています", code: "TODO40001" },
           { status: 400 },
         );
       }
